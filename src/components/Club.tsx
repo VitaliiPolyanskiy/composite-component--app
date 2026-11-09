@@ -6,6 +6,6 @@ type ClubProps = {
 
 export default class Club extends React.Component<ClubProps> {
   render() {
-    return <li>{this.props.name}</li>;
+    return <li className="club-item">{this.props.name}</li>;
   }
 }

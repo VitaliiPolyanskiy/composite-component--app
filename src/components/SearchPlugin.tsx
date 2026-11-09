@@ -7,14 +7,20 @@ type SearchPluginProps = {
 export default class SearchPlugin extends React.Component<SearchPluginProps> {
   constructor(props: SearchPluginProps) {
     super(props);
-}
+  }
 
-  onTextChanged = (e: React.ChangeEvent<HTMLInputElement>) =>{
+  onTextChanged = (e: React.ChangeEvent<HTMLInputElement>) => {
     const text = e.target.value.trim();
     this.props.filter(text);
   }
 
   render() {
-    return <input placeholder="Поиск" onChange={this.onTextChanged} />;
+    return (
+      <input 
+        className="search-input" 
+        placeholder="Пошук клубу..." 
+        onChange={this.onTextChanged} 
+      />
+    );
   }
 }

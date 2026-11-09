@@ -13,7 +13,7 @@ type ClubsListState = {
   clubs: string[];
 };
 
-export default class ClubsList extends React.Component<ClubsListProps,ClubsListState> 
+export default class ClubsList extends React.Component<ClubsListProps, ClubsListState> 
 {
   constructor(props: ClubsListProps) {
     super(props);
@@ -29,12 +29,12 @@ export default class ClubsList extends React.Component<ClubsListProps,ClubsListS
 
   render() {
     return (
-      <div>
-        <h2>{this.props.data.title}</h2>
+      <div className="clubs-wrapper">
+        <h2 className="clubs-title">{this.props.data.title}</h2>
         <SearchPlugin filter={this.filterList} />
-        <ul>
-          {this.state.clubs.map((club) => (
-            <Club name={club} />
+        <ul className="clubs-list">
+          {this.state.clubs.map((club, index) => (
+            <Club key={index} name={club} />
           ))}
         </ul>
       </div>
